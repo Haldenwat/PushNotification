@@ -182,7 +182,7 @@ class FcmV1 extends Fcm
      */
     protected function buildData($topic, $message, $isCondition)
     {
-        $condition = $isCondition ? ['condition' => $topic] : ['to' => '/topics/' . $topic];
+        $condition = $isCondition ? ['condition' => $topic] : ['topic' => $topic];
 
         return [
             'message' => array_merge($condition, $this->buildMessage($message)),
